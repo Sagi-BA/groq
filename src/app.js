@@ -4,7 +4,7 @@ const GroqClass = require("./GroqClass");
 // Main function to send a user prompt and handle the response
 async function main() {
   const mygroq = new GroqClass();
-  const userPrompt = "Who is Anthony Hopkins?";
+  const userPrompt = "מי זה אנתוני הופקינס ?";
   const response = await mygroq.sendPrompt(userPrompt);
 
   if (response) {

@@ -15,11 +15,7 @@
   "keywords": [],
   "dependencies": {
     "dotenv": "^16.4.5",
-    "express": "^4.19.2",
-    "groq-sdk": "^0.3.3",
-    "typescript": "^5.4.5"
+    "groq-sdk": "^0.3.3"
   },
-  "devDependencies": {
-    "jest": "^29.7.0"
-  }
+  "devDependencies": {}
 }

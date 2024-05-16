@@ -13,121 +13,88 @@
 [![Support](https://img.shields.io/badge/facebook-white?style=for-the-badge&logo=facebook&logoColor=0866FF)](https://www.facebook.com/sagi.baron)
 [![Support](https://img.shields.io/badge/email_me-white?style=for-the-badge&logo=gmail&logoColor=EA4335)](mailto:sagi.baron76@gmail.com)
 
-## 👀 What do i see ?
-A class i made to use [Groq API](https://groq.com/) - a language model
+## 👀 What Do I See?
+
+I created a class to ask questions to an AI and get responses. I'm using the [Groq API](https://groq.com/) - a powerful language model.
+
+[Rate Limits for Free Beta](https://console.groq.com/settings/limits)
+
+The rate limits for the Free Beta are as follows:
+| ID | REQUESTS PER MINUTE | REQUESTS PER DAY | TOKENS PER MINUTE |
+|-------------------|---------------------|------------------|-------------------|
+| gemma-7b-it | 30 | 14,400 | 15,000 |
+| mixtral-8×7b-32768| 30 | 14,400 | 5,000 |
+| llama3-70b-8192 | 30 | 14,400 | 6,000 |
+| llama3-8b-8192 | 30 | 14,400 | 30,000 |
 
 ## 👉 Guides & News
 
-run [app.js](app.js) for testing
-Note:
+To get started, follow these steps:
 
-## 👉 Dependencies Installations
+1. Clone the repository using:
+
+```shell
+git clone https://github.com/Sagi-BA/groq.git
+```
+
+2. Install the required dependencies by running:
+
+```shell
+npm install --omit=dev
+```
+
+3. Create a .env file in the root folder of the project. Use the [env.example](env.example) file as a template and add your environment variables.
+
+4. Register on the Groq platform and create an [API Key](https://console.groq.com/keys)
+
+5. To test the application, run the [app.js](app.js) file. You can change the starting JavaScript file by modifying the [launch.json](.vscode/launch.json) configuration.
+
+## 👉 Dependencies
+
+To install the required dependencies, run the following commands:
 
 ```shell
 npm install dotenv --save
 npm install groq-sdk --save
 ```
 
-## Authorization
+You can find the complete list of dependencies in the [package.json](package.json)
+file.
+
+## 👉 Authorization
 
 FREE
 
-## Authentication
+## 👉 Authentication
 
 FREE
 
-## Examples
+## 👉 Examples
 
-Here i show how to use [GroqClass()](src/GroqClass.js)
+Here, I demonstrate how to use the [GroqClass()](src/GroqClass.js)
 
-### Send prompt message to groq
+### 🚀 Send a Prompt Message to Groq
 
-Use common js
+```javascript
+// Import the GroqManager class using CommonJS syntax
+const GroqClass = require("./GroqClass");
 
-```js
-const whatsAppClient = require("@green-api/whatsapp-api-client");
-
-const restAPI = whatsAppClient.restAPI({
-  idInstance: "YOUR_ID_INSTANCE",
-  apiTokenInstance: "YOUR_API_TOKEN_INSTANCE",
-});
-
-restAPI.message
-  .sendMessage("79999999999@c.us", null, "hello world")
-  .then((data) => {
-    console.log(data);
-  });
-```
-
-For Node.js app, you probably have to add in `package.json` property `"type": "module"`. Notice that
-all examples below are ES6 based
-
-```js
-
-<script src="https://unpkg.com/@green-api/whatsapp-api-client/lib/whatsapp-api-client.min.js"></script>
-<script>
-  const groqManager = new GroqManager();
+// Main function to send a user prompt and handle the response
+async function main() {
+  const mygroq = new GroqClass();
   const userPrompt = "Who is Anthony Hopkins?";
-  const response = await groqManager.sendPrompt(userPrompt);
 
-  if (response)
-  {
+  const response = await mygroq.sendPrompt(userPrompt);
+
+  if (response) {
     console.log(response.choices[0]?.message?.content || "");
-  }
-  else{
+  } else {
     console.error("Failed to get a response from Groq.");
   }
-</script>
+}
+
+// Call the main function
+main().catch(console.error);
 ```
 
-## Installations
-
-- Live Server
-- Start Live Server: "Open with Live Server"
-
-## Deploying development environment
-
-Any help with development and bug fixing is appreciated. In order to deploy test-ready environment please make the
-steps:
-
-1. Clone repo with `git clone`
-2. Install dependencies with `npm install`
-3. Install globally libraries `rollup` for bundled builds.
-4. Add webhooks as new dev express via npm `npm install express --save-dev`. Don't forget to delete it before making
-   pull request
-5. Create .env file in root folder and add environment variables using example file [env.example](env.example)
-6. Add `"type": "module"` to the package.json
-
-## Build
-
-Compile browser and node|webpack versions with single command:
-
-```
-npm run build
-```
-
-### Sending prompt to groq
-
-Link to example: [sendTextMessage.js](/examples/sendTextMessage.js)
-
-```
-response = greenAPI.sending.sendMessage("11001234567@c.us", "Message text")
-
-print(response.data)
-```
-
-## Service methods documentation
-
-- groq website: [https://groq.com/](https://groq.com/).
-  > Limits - These are the rate limits for you [Free Beta]
-
-> sss
-
-## External products
-
-- [requests](https://requests.readthedocs.io/en/latest/) - for HTTP requests.
-
-## License
-
-FREE.
-I Am that I Am, I will be what I will be
+# I Am that I Am, I will be what I will be

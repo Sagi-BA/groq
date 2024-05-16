@@ -1,6 +1,7 @@
 node_modules
 build
 postman
+post
 
 .env
 groq.code-workspace

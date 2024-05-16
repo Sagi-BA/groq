@@ -65,7 +65,7 @@ file.
 
 FREE
 
-## 👉 Authentication
+## 👉 Authorization
 
 FREE
 

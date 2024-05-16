@@ -1,0 +1,6 @@
+node_modules
+build
+postman
+
+.env
+groq.code-workspace

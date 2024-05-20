@@ -1,23 +1,8 @@
 ![Alt text](https://media.licdn.com/dms/image/D4D16AQEbR646hmY3bg/profile-displaybackgroundimage-shrink_350_1400/0/1713437135249?e=1721260800&v=beta&t=OQyEZRB5hLvjqYXpHNpFol8GptSa3h0WArFmYQPHEUc)
 
-# 👇 groq - language model
+# 👀 Groq language model
 
-[![](https://img.shields.io/badge/Node.js-white?style=for-the-badge&logo=nodedotjs&logoColor=5FA04E)](https://nodejs.org/)
-
-## 👇 Support links
-
-[![Support](https://img.shields.io/badge/linktree-white?style=for-the-badge&logo=linktree&logoColor=43E55E)](https://linktr.ee/sagib?lt_utm_source=lt_share_link#373198503)
-[![Support](https://img.shields.io/badge/Buy_Me_A_Coffee-white?style=for-the-badge&logo=buymeacoffee&logoColor=FFDD00)](https://buymeacoffee.com/sagibar)
-[![Support](https://img.shields.io/badge/linkedin-white?style=for-the-badge&logo=linkedin&logoColor=0A66C2)](https://www.linkedin.com/in/sagi-bar-on)
-[![Support](https://img.shields.io/badge/whatsapp-white?style=for-the-badge&logo=whatsapp&logoColor=25D366)](https://api.whatsapp.com/send?phone=972549995050)
-[![Support](https://img.shields.io/badge/facebook-white?style=for-the-badge&logo=facebook&logoColor=0866FF)](https://www.facebook.com/sagi.baron)
-[![Support](https://img.shields.io/badge/email_me-white?style=for-the-badge&logo=gmail&logoColor=EA4335)](mailto:sagi.baron76@gmail.com)
-
-## 👀 What Do I See?
-
-I created a class to ask questions to an AI and get responses. I'm using the [Groq API](https://groq.com/) - a powerful language model.
-
-[Rate Limits for Free Beta](https://console.groq.com/settings/limits)
+This project demonstrates how to use the [Groq SDK](https://console.groq.com/docs/quickstart) in both Node.js and Python environments. It includes example code for sending prompts to the Groq AI and handling responses. [Rate Limits for Free Beta](https://console.groq.com/settings/limits)
 
 The rate limits for the Free Beta are as follows:
 | ID | REQUESTS PER MINUTE | REQUESTS PER DAY | TOKENS PER MINUTE |
@@ -27,7 +12,48 @@ The rate limits for the Free Beta are as follows:
 | llama3-70b-8192 | 30 | 14,400 | 6,000 |
 | llama3-8b-8192 | 30 | 14,400 | 30,000 |
 
-## 👉 Guides & News
+[![Support](https://img.shields.io/badge/linktree-white?style=for-the-badge&logo=linktree&logoColor=43E55E)](https://linktr.ee/sagib?lt_utm_source=lt_share_link#373198503)
+[![Support](https://img.shields.io/badge/Buy_Me_A_Coffee-white?style=for-the-badge&logo=buymeacoffee&logoColor=FFDD00)](https://buymeacoffee.com/sagibar)
+[![Support](https://img.shields.io/badge/linkedin-white?style=for-the-badge&logo=linkedin&logoColor=0A66C2)](https://www.linkedin.com/in/sagi-bar-on)
+[![Support](https://img.shields.io/badge/whatsapp-white?style=for-the-badge&logo=whatsapp&logoColor=25D366)](https://api.whatsapp.com/send?phone=972549995050)
+[![Support](https://img.shields.io/badge/facebook-white?style=for-the-badge&logo=facebook&logoColor=0866FF)](https://www.facebook.com/sagi.baron)
+[![Support](https://img.shields.io/badge/email_me-white?style=for-the-badge&logo=gmail&logoColor=EA4335)](mailto:sagi.baron76@gmail.com)
+
+## Project Structure
+
+my_python_project/
+│
+├── src/
+│ ├── app.js
+│ ├── GroqClass.js
+│ ├── app.py
+│ └── GroqClass.py
+│
+├── .env.example
+├── package.json
+├── requirements.txt
+└── README.md
+
+## Prerequisites
+
+- Node.js (v12 or higher)
+- Python (v3.7 or higher)
+- [Groq SDK](https://groq.dev/sdk)
+- Environment variables setup (see `.env.example`)
+
+## Setup
+
+### Environment Variables
+
+Create a `.env` file in the root directory of your project and add the following environment variables:
+
+```.env
+GROQ_API_KEY=your_api_key_here
+GROQ_MAX_TOKENS=100
+GROQ_MODEL=your_model_here
+```
+
+## Guides & News
 
 To get started, follow these steps:
 
@@ -49,33 +75,47 @@ npm install --omit=dev
 
 5. To test the application, run the [app.js](app.js) file. You can change the starting JavaScript file by modifying the [launch.json](.vscode/launch.json) configuration.
 
-## 👉 Dependencies
+## Dependencies
 
-To install the required dependencies, run the following commands:
+To install the required dependencies, run the following:
 
-```shell
-npm install dotenv --save
-npm install groq-sdk --save
-```
+### Node.js
 
-You can find the complete list of dependencies in the [package.json](package.json)
-file.
+- dotenv: ^16.4.5
+- groq-sdk: ^0.3.3
 
-## 👉 Authorization
+### Python
 
-FREE
+- Groq
+- python-dotenv
 
-## 👉 Authentication
-
-FREE
-
-## 👉 Examples
+## Examples
 
 Here, I demonstrate how to use the [GroqClass()](src/GroqClass.js)
 
 ### 🚀 Send a Prompt Message to Groq
 
+```python
+# pythoe example
+import asyncio
+from GroqClass import GroqClass  # Corrected import statement
+
+async def main():
+    mygroq = GroqClass()
+    userPrompt = "מי זה אנתוני הופקינס ?"
+    response = await mygroq.sendsendPrompt(userPrompt)
+
+    if response:
+        print(response.choices[0].message.content)
+    else:
+        print("Failed to get a response from Groq.")
+
+if __name__ == "__main__":
+    asyncio.run(main())
+```
+
 ```javascript
+// JavaScript example
 // Import the GroqManager class using CommonJS syntax
 const GroqClass = require("./GroqClass");
 

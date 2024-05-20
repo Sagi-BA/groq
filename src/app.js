@@ -1,3 +1,5 @@
+// JavaScript example
+
 // Import the GroqManager class using CommonJS syntax
 const GroqClass = require("./GroqClass");
 

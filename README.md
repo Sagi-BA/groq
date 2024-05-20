@@ -122,4 +122,8 @@ async function main() {
 main().catch(console.error);
 ```
 
+## License
+
+This project is licensed under the ISC License. See the LICENSE file for details.
+
 # I Am that I Am, I will be what I will be

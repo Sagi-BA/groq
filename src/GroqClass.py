@@ -5,7 +5,7 @@ class GroqClass:
     def __init__(self):
         self.client = Groq(api_key=os.environ.get("GROQ_API_KEY"),)
 
-    async def sendsendPrompt(self, userPrompt):        
+    async def sendPrompt(self, userPrompt):        
         print(f"Start: groq send_prompt({userPrompt})")
 
         try:            

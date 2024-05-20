@@ -2,11 +2,21 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "type": "node",
+      "name": "Python: src/app.py",
+      "type": "debugpy",
       "request": "launch",
-      "name": "Launch Program",
-      "skipFiles": ["<node_internals>/**"],
-      "program": "${workspaceFolder}/src/app.js"
+      "program": "${workspaceFolder}/src/app.py",
+      "console": "integratedTerminal",
+      "envFile": "${workspaceFolder}/.env"
     }
   ]
+  // "configurations": [
+  //   {
+  //     "name": "Launch Program",
+  //     "type": "node",
+  //     "request": "launch",
+  //     "skipFiles": ["<node_internals>/**"],
+  //     "program": "${workspaceFolder}/src/app.js"
+  //   }
+  // ]
 }

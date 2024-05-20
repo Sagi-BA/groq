@@ -1,6 +1,7 @@
 node_modules
 images
 mypostman
+myenv
 
 .env
 groq.code-workspace

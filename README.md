@@ -19,21 +19,6 @@ The rate limits for the Free Beta are as follows:
 [![Support](https://img.shields.io/badge/facebook-white?style=for-the-badge&logo=facebook&logoColor=0866FF)](https://www.facebook.com/sagi.baron)
 [![Support](https://img.shields.io/badge/email_me-white?style=for-the-badge&logo=gmail&logoColor=EA4335)](mailto:sagi.baron76@gmail.com)
 
-## Project Structure
-
-my_python_project/
-│
-├── src/
-│ ├── app.js
-│ ├── GroqClass.js
-│ ├── app.py
-│ └── GroqClass.py
-│
-├── .env.example
-├── package.json
-├── requirements.txt
-└── README.md
-
 ## Prerequisites
 
 - Node.js (v12 or higher)
